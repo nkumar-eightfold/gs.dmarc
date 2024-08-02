@@ -27,13 +27,9 @@ with codecs.open(os.path.join("docs", "HISTORY.rst"),
                  encoding='utf-8') as f:
     long_description += '\n' + f.read()
 
-requires = ['publicsuffix', ]
+requires = ['publicsuffix', 'dnspython>=2.6.1']
 if (sys.version_info < (3, 4)):
     requires += ['setuptools', 'enum34']
-if (sys.version_info >= (3, )):
-    requires += ['dnspython3 >= 1.11.1']
-else:
-    requires += ['dnspython >= 1.11.1']
 
 setup(name=name,
       version=version,
